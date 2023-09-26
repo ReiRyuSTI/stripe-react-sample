@@ -10,3 +10,8 @@
 - [効率的なUI開発の鍵：Next.js (TypeScript) にStorybookを導入 (storybook/main.jsではなくstorybook/main.tsを生成し構築)](https://qiita.com/rikuto125/items/e596cdb53f2ead0eea18)
 - [Storybookを導入する際にやるべきこと3選](https://zenn.dev/sum0/articles/9463d16d9d40e2)
 - [【コードジェネレーターPlop JS】ファイルの雛形を作成する方法を解説](https://mo-gu-mo-gu.com/code-generator-plop/)
+
+## alias 設定
+
+- [Aliasのパスを自動で作成](https://github.com/Microsoft/vscode/issues/59815)
+- [vite+TypeScriptでalias pathを~に設定する](https://zenn.dev/k_u_0615/articles/34b7f7d4a79e52)

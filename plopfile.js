@@ -9,7 +9,7 @@ export default function (
         type: 'list',
         name: 'componentType',
         message: 'Component type',
-        choices: ['common', 'modules', 'layout'],
+        choices: ['common', 'modules', 'layout', 'utilities'],
       },
       {
         type: 'input',
@@ -20,7 +20,15 @@ export default function (
     actions: function (data) {
       const componentName = data.name;
       const componentType = data.componentType;
-
+      if (componentType == 'utilities') {
+        return [
+          {
+            type: 'add',
+            path: 'src/utilities/{{name}}.tsx',
+            templateFile: 'plop-templates/layout-component.tsx.hbs',
+          },
+        ];
+      }
       if (componentType == 'layout') {
         return [
           {
