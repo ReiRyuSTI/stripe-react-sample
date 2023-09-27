@@ -36,6 +36,35 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@azure/msal-browser@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "@azure/msal-browser@npm:3.1.0"
+  dependencies:
+    "@azure/msal-common": "npm:14.0.3"
+  checksum: fd637c182de9f2087e3e3fb6194f092459cfae41323af900d7f8daac9ef59315698405598f34e6690d250ddac652463b1f2e19e06be770e83c74d425243412b3
+  languageName: node
+  linkType: hard
+
+"@azure/msal-common@npm:14.0.3":
+  version: 14.0.3
+  resolution: "@azure/msal-common@npm:14.0.3"
+  checksum: 27d8e62bb858c0b30b42b3143c64b50f6e5a22ccccc49f171c61b42453936bda29d48a576eacafd982cc398089951c1c7ce29c348c81a961ff39a69960886536
+  languageName: node
+  linkType: hard
+
+"@azure/msal-react@npm:^2.0.3":
+  version: 2.0.3
+  resolution: "@azure/msal-react@npm:2.0.3"
+  dependencies:
+    "@rollup/plugin-typescript": "npm:^11.1.0"
+    rollup: "npm:^3.20.2"
+  peerDependencies:
+    "@azure/msal-browser": ^3.1.0
+    react: ^16.8.0 || ^17 || ^18
+  checksum: fefd33a344048e43562b6b52fb795080b3206f71a35fd6669fe6c987b5c767eff35aad3487711346647b44b7ac33d8f3be2f0a9c568539b77d65e8ca0fde10b9
+  languageName: node
+  linkType: hard
+
 "@babel/code-frame@npm:^7.0.0, @babel/code-frame@npm:^7.10.4, @babel/code-frame@npm:^7.22.10, @babel/code-frame@npm:^7.22.5":
   version: 7.22.10
   resolution: "@babel/code-frame@npm:7.22.10"
@@ -3676,6 +3705,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@rollup/plugin-typescript@npm:^11.1.0":
+  version: 11.1.4
+  resolution: "@rollup/plugin-typescript@npm:11.1.4"
+  dependencies:
+    "@rollup/pluginutils": "npm:^5.0.1"
+    resolve: "npm:^1.22.1"
+  peerDependencies:
+    rollup: ^2.14.0||^3.0.0
+    tslib: "*"
+    typescript: ">=3.7.0"
+  peerDependenciesMeta:
+    rollup:
+      optional: true
+    tslib:
+      optional: true
+  checksum: 1fc5086c3154db7a1966efec858ae9f235d7cb55ca30ef2980eeb5f7abdd7c8fe10c1d94e311e3f81e120c2f46745903cde38f2ea12c012603c50414797266da
+  languageName: node
+  linkType: hard
+
 "@rollup/pluginutils@npm:^4.2.1":
   version: 4.2.1
   resolution: "@rollup/pluginutils@npm:4.2.1"
@@ -3683,6 +3731,22 @@ __metadata:
     estree-walker: "npm:^2.0.1"
     picomatch: "npm:^2.2.2"
   checksum: 96f7c2ec2ca7f20178c65a6634a1d612fc3ff6d4a70ff18468d1a909218d491f0164c320dbf195fbbf932059e71c21cfa31b64813d7922f14c83e773527f8b8e
+  languageName: node
+  linkType: hard
+
+"@rollup/pluginutils@npm:^5.0.1":
+  version: 5.0.4
+  resolution: "@rollup/pluginutils@npm:5.0.4"
+  dependencies:
+    "@types/estree": "npm:^1.0.0"
+    estree-walker: "npm:^2.0.2"
+    picomatch: "npm:^2.3.1"
+  peerDependencies:
+    rollup: ^1.20.0||^2.0.0||^3.0.0
+  peerDependenciesMeta:
+    rollup:
+      optional: true
+  checksum: 08e1de2fcfba1cb1fa0d635f11d663075012a8e54add0342c7f806cba6d6a34078b5563f41691eee7b299f51a8de8c87bc4a9c22e99c781e8eccae003d324c00
   languageName: node
   linkType: hard
 
@@ -12357,6 +12421,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "react-component-sample@workspace:."
   dependencies:
+    "@azure/msal-browser": "npm:^3.1.0"
+    "@azure/msal-react": "npm:^2.0.3"
     "@babel/core": "npm:^7.20.12"
     "@storybook/addon-essentials": "npm:7.4.5"
     "@storybook/addon-interactions": "npm:7.4.5"
@@ -13093,6 +13159,20 @@ __metadata:
   bin:
     rollup: dist/bin/rollup
   checksum: 9fa7c283f048e6709d6b452cb7d66b8186e6859cdb0fe2d3268ff36fc9e85aeaaf4ffdb710ab03b01e1016262e7614f63e83aba9c7c2732dbdb9ea390b637d2b
+  languageName: node
+  linkType: hard
+
+"rollup@npm:^3.20.2":
+  version: 3.29.3
+  resolution: "rollup@npm:3.29.3"
+  dependencies:
+    fsevents: "npm:~2.3.2"
+  dependenciesMeta:
+    fsevents:
+      optional: true
+  bin:
+    rollup: dist/bin/rollup
+  checksum: de5293c6da333e387a7b90f3333a61077645b7966b0612bba1e7b92a37911b527cacee86f48f2b9bb8bd38f9455f15ddffe5486441eaf4165ee8926ffe8a90c1
   languageName: node
   linkType: hard
 
