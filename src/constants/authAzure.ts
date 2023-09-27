@@ -1,6 +1,6 @@
 import { Configuration } from '@azure/msal-browser';
 
-const AzureClientId: string = import.meta.env.VITE_AZURE_CLIENT_ID || '';
+export const AzureClientId: string = import.meta.env.VITE_AZURE_CLIENT_ID || '';
 const AzureAuthority: string = import.meta.env.VITE_AZURE_AUTHORITY || '';
 const AzureKnownAuthorities: string[] = [import.meta.env.VITE_AZURE_KNOWN_AUTHORITY || ''];
 
