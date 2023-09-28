@@ -7,6 +7,7 @@ import { useAzureAuth } from '@/hooks/useAzureAuth';
 
 export const axiosClient = axios.create({
   timeout: 10000,
+  headers: { 'Content-Type': 'application/json' },
 });
 
 type Props = {
@@ -15,21 +16,20 @@ type Props = {
 
 export const AxiosErrorHandlingComponent = (props: Props) => {
   const { children } = props;
-  const { authenticationResult, isAuthenticated } = useAzureAuth();
+  const { authenticationResult } = useAzureAuth();
 
   const { showBoundary } = useErrorBoundary();
 
   useEffect(() => {
-    const requestInterceptor = axiosClient.interceptors.request.use(
-      async (config: InternalAxiosRequestConfig) => {
+    const requestInterceptor = axiosClient.interceptors.request.use(async (config: InternalAxiosRequestConfig) => {
+      try {
         const result = await authenticationResult();
-
-        if (!config.headers.Authorization) {
-          config.headers.Authorization = 'Bearer ' + result.accessToken;
-        }
+        config.headers.Authorization = 'Bearer ' + result.accessToken;
+        return config;
+      } catch (e) {
         return config;
       }
-    );
+    });
     const responseInterceptor = axiosClient.interceptors.response.use(
       (response: AxiosResponse) => {
         return response;
@@ -44,7 +44,7 @@ export const AxiosErrorHandlingComponent = (props: Props) => {
       axiosClient.interceptors.response.eject(responseInterceptor);
       axiosClient.interceptors.request.eject(requestInterceptor);
     };
-  }, [isAuthenticated, authenticationResult, showBoundary]);
+  }, [authenticationResult, showBoundary]);
 
   return <>{children}</>;
 };

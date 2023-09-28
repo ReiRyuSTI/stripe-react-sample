@@ -15,15 +15,15 @@ export const useAzureAuth = () => {
 
   const authenticationResult = useCallback(async () => {
     const result = await instance.acquireTokenSilent({
-      scopes: ['openid', AzureClientId],
+      scopes: [AzureClientId],
       account: account,
     });
     return result;
   }, [instance, account]);
 
   const userId = useMemo(() => {
-    if (!account || !account.idTokenClaims || !account.idTokenClaims.sub) return '';
-    const id = account.idTokenClaims.sub;
+    if (!account || !account.idTokenClaims || !account.idTokenClaims.oid) return '';
+    const id = account.idTokenClaims.oid;
     return id;
   }, [account]);
 

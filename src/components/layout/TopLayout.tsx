@@ -1,3 +1,5 @@
+import { SWRConfig } from 'swr';
+
 import { AxiosErrorHandlingComponent } from '@/utilities/AxiosConfig';
 import { ErrorBoundaryComponent } from '@/utilities/ErrorBoundary';
 
@@ -10,7 +12,9 @@ export const TopLayout = (props: Props) => {
   return (
     <>
       <ErrorBoundaryComponent>
-        <AxiosErrorHandlingComponent>{children}</AxiosErrorHandlingComponent>
+        <AxiosErrorHandlingComponent>
+          <SWRConfig>{children}</SWRConfig>
+        </AxiosErrorHandlingComponent>
       </ErrorBoundaryComponent>
     </>
   );
