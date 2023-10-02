@@ -17,34 +17,34 @@ type Props = {
 export const AxiosErrorHandlingComponent = (props: Props) => {
   const { children } = props;
   const { authenticationResult } = useAzureAuth();
-
   const { showBoundary } = useErrorBoundary();
 
+  const requestInterceptor = axiosClient.interceptors.request.use(async (config: InternalAxiosRequestConfig) => {
+    try {
+      const result = await authenticationResult();
+      config.headers.Authorization = 'Bearer ' + result.accessToken;
+      return config;
+    } catch (e) {
+      console.warn(e);
+      return config;
+    }
+  });
+
+  const responseInterceptor = axiosClient.interceptors.response.use(
+    (response: AxiosResponse) => {
+      return response;
+    },
+    (error: AxiosError) => {
+      showBoundary(error);
+      return Promise.reject(error);
+    }
+  );
   useEffect(() => {
-    const requestInterceptor = axiosClient.interceptors.request.use(async (config: InternalAxiosRequestConfig) => {
-      try {
-        const result = await authenticationResult();
-        config.headers.Authorization = 'Bearer ' + result.accessToken;
-        return config;
-      } catch (e) {
-        return config;
-      }
-    });
-    const responseInterceptor = axiosClient.interceptors.response.use(
-      (response: AxiosResponse) => {
-        return response;
-      },
-      (error: AxiosError) => {
-        showBoundary(error);
-        return Promise.reject(error);
-      }
-    );
-    // クリーンアップ
     return () => {
       axiosClient.interceptors.response.eject(responseInterceptor);
       axiosClient.interceptors.request.eject(requestInterceptor);
     };
-  }, [authenticationResult, showBoundary]);
+  }, [requestInterceptor, responseInterceptor]);
 
   return <>{children}</>;
 };

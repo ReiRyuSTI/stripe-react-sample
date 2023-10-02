@@ -1,21 +1,19 @@
+import { Link } from 'react-router-dom';
+
+import { UserInfoComponent } from '@/components/modules/UserInfoComponent/UserInfoComponent';
 import { useAzureAuth } from '@/hooks/useAzureAuth';
+import { useUserState } from '@/hooks/useUserState';
+import { LoadingComponent } from '@/pages/LoadingPage';
 
 export const TopPage = () => {
-  const { userId, authenticationResult, logoutAzure } = useAzureAuth();
+  const { userId } = useAzureAuth();
+  const { user, isLoadingUser } = useUserState(userId);
 
-  const logout = async () => {
-    await logoutAzure();
-  };
-
-  const test = async () => {
-    const result = await authenticationResult();
-    console.log(result);
-  };
-
+  if (isLoadingUser || !user) return <LoadingComponent />;
   return (
-    <main>
-      {userId} <button onClick={logout}>logout</button>
-      <button onClick={test}>result</button>
+    <main className="flex flex-col gap-4">
+      <UserInfoComponent user={user} />
+      <Link to={'setupIntent'}>setupIntent</Link>
     </main>
   );
 };

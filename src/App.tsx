@@ -1,14 +1,13 @@
-import { BrowserRouter } from 'react-router-dom';
-
+import { AppLayout } from '@/components/layout/AppLayout';
 import { RouterConfig } from '@/routers/RouterConfig';
 import { AzureConfigComponent } from '@/utilities/AzureConfigComponent';
 
 function App() {
   return (
     <AzureConfigComponent>
-      <BrowserRouter>
+      <AppLayout>
         <RouterConfig />
-      </BrowserRouter>
+      </AppLayout>
     </AzureConfigComponent>
   );
 }

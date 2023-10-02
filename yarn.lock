@@ -4828,6 +4828,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@stripe/react-stripe-js@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "@stripe/react-stripe-js@npm:2.3.0"
+  dependencies:
+    prop-types: "npm:^15.7.2"
+  peerDependencies:
+    "@stripe/stripe-js": ^1.44.1 || ^2.0.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: ad00411b28a7b6a45e261114e90e4d3a941dfbcbe2094fed6686e2833b14c2976dcb432b701314741d3d9a211a8dfb1e34b10b12e8000dcf8e030e6145dba38f
+  languageName: node
+  linkType: hard
+
+"@stripe/stripe-js@npm:^2.1.6":
+  version: 2.1.6
+  resolution: "@stripe/stripe-js@npm:2.1.6"
+  checksum: 28616530f98153d35cd8e984186d85bc35c148ddc74489c1bb43132dc69c83abeba2bc58ad3c3cb8bf5110d51c6c61b73e61b0bd2c2013c90e79fe866fe98f26
+  languageName: node
+  linkType: hard
+
 "@testing-library/dom@npm:^9.0.0":
   version: 9.3.1
   resolution: "@testing-library/dom@npm:9.3.1"
@@ -12440,6 +12460,8 @@ __metadata:
     "@storybook/react": "npm:7.4.5"
     "@storybook/react-vite": "npm:7.4.5"
     "@storybook/testing-library": "npm:0.2.1"
+    "@stripe/react-stripe-js": "npm:^2.3.0"
+    "@stripe/stripe-js": "npm:^2.1.6"
     "@types/node": "npm:^18.11.19"
     "@types/react": "npm:^18.0.27"
     "@types/react-dom": "npm:^18.0.10"

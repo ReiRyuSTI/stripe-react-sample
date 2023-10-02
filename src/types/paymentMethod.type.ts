@@ -1,3 +1,7 @@
 export type paymentSetupIntentType = {
-  id: string;
+  clientSecret: string;
+};
+
+export type stripePubKeyType = {
+  pubKey: string;
 };
