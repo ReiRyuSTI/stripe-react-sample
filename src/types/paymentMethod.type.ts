@@ -5,3 +5,7 @@ export type paymentSetupIntentType = {
 export type stripePubKeyType = {
   pubKey: string;
 };
+
+export type customerPortalSessionType = {
+  url: string;
+};

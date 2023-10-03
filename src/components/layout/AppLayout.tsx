@@ -1,7 +1,7 @@
 import { SWRConfig } from 'swr';
 
-import { FooterComponent } from '@/components/common/FooterComponent/FooterComponent';
-import { HeaderComponent } from '@/components/common/HeaderComponent/HeaderComponent';
+import { FooterComponent } from '@/components/modules/FooterComponent/FooterComponent';
+import { HeaderComponent } from '@/components/modules/HeaderComponent/HeaderComponent';
 import { AxiosErrorHandlingComponent } from '@/utilities/AxiosConfig';
 import { ErrorBoundaryComponent } from '@/utilities/ErrorBoundary';
 

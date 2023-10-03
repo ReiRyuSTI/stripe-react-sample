@@ -41,7 +41,7 @@ export const PaymentComponent = () => {
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="min-h-[360px] w-96">
       <PaymentElement />
       <ButtonComponent color="red" label="送信" />
     </form>

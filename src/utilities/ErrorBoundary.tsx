@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const ErrorFallback = ({ error, resetErrorBoundary }: FallbackProps) => {
   console.error(error);
-  if (axios.isAxiosError(error) && error.response) return <></>;
+  if (axios.isAxiosError(error) && error.response) return <button onClick={resetErrorBoundary}>Error</button>;
   return <button onClick={resetErrorBoundary}>Error</button>;
 };
 
