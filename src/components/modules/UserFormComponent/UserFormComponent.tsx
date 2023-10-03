@@ -23,7 +23,7 @@ export const UserFormComponent = (props: UserFormComponentProps) => {
   };
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} className="flex w-96 flex-col p-2">
         <FormInputComponent name={'email'} label="メールアドレス" control={control} disable={true} />
         <FormInputComponent
           name={'name'}

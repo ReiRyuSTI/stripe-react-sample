@@ -12,7 +12,7 @@ export const ButtonComponent = (props: ButtonComponentProps) => {
     <button
       type={onClick ? 'button' : 'submit'}
       onClick={onClick}
-      className={'w-full rounded-md border py-2 text-sm ' + ButtonColorCSS[color]}
+      className={'w-full rounded-md border py-2 px-4 text-sm ' + ButtonColorCSS[color]}
     >
       {label}
     </button>

@@ -1,3 +1,4 @@
+import { InfoContentComponent } from '@/components/common/InfoContentComponent/InfoContentComponent';
 import { user } from '@/types/user.type';
 
 type UserInfoComponentProps = {
@@ -7,36 +8,27 @@ type UserInfoComponentProps = {
 export const UserInfoComponent = (props: UserInfoComponentProps) => {
   const { user } = props;
   return (
-    <div>
-      <div>
-        <span>ユーザー名</span>
-        {user.name}
-      </div>
-      <div>
-        <span>メールアドレス</span>
-        {user.email}
-      </div>
-      <div>
-        <span>支払情報</span>
+    <div className="flex w-96 flex-col gap-2 p-2">
+      <InfoContentComponent label={'ユーザー名'} content={user.name} />
+      <InfoContentComponent label={'メールアドレス'} content={user.email} />
+      <div className="flex w-full flex-col ">
+        <span className="text-sm">支払情報</span>
         {user.card ? (
-          <>
-            <div>
-              <span>ブランド</span>
-              <span>{user.card.brand}</span>
+          <div className="flex flex-col rounded-md border border-gray-200 p-2 text-sm ">
+            <div className="flex items-center justify-center">
+              <span className="rounded-md bg-gray-300 py-1 px-4">{user.card.brand}</span>
             </div>
-            <div>
-              <span>last4</span>
+            <div className="flex flex-row justify-around">
               <span>{user.card.last4}</span>
-            </div>
-            <div>
-              <span>有効期限</span>
               <span>
                 {user.card.exp_year}/{user.card.exp_month}
               </span>
             </div>
-          </>
+          </div>
         ) : (
-          <span>支払情報はまだありません。</span>
+          <div className="flex w-full items-center justify-center rounded-md border border-red-400 p-2">
+            <span className=" text-xs text-red-400">支払情報はまだありません。</span>
+          </div>
         )}
       </div>
     </div>

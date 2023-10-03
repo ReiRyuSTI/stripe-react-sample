@@ -21,10 +21,12 @@ export const TopPage = () => {
   if (isLoadingUser || !user) return <LoadingComponent />;
   if (isLoadingCustomerPortalUrl || !customerPortalUrl) return <LoadingComponent />;
   return (
-    <main className="flex flex-col gap-4">
+    <main className="flex flex-row items-center justify-center gap-4">
       <UserInfoComponent user={user} />
-      <ButtonComponent color="blue" onClick={() => nav('setupIntent')} label="SetupIntentを開く" />
-      <ButtonComponent color="blue" onClick={onClickCustomerPortal} label="CustomerPortalを開く" />
+      <div className="flex w-96 flex-col gap-4">
+        <ButtonComponent color="blue" onClick={() => nav('setupIntent')} label="SetupIntentを開く" />
+        <ButtonComponent color="blue" onClick={onClickCustomerPortal} label="CustomerPortalを開く" />
+      </div>
     </main>
   );
 };
