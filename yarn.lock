@@ -5243,6 +5243,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:>=8.1.0":
+  version: 20.8.2
+  resolution: "@types/node@npm:20.8.2"
+  checksum: f0e5ef2c22aed4ccf38bf8e526b90fdf7ae03aa2ebf77418535de7861137ee271f5bdbbfb4641004ea933516e2a66e2f927a6b2352e01414ef827218efdf8580
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:^16.0.0":
   version: 16.18.40
   resolution: "@types/node@npm:16.18.40"
@@ -12385,7 +12392,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"qs@npm:^6.10.0":
+"qs@npm:^6.10.0, qs@npm:^6.11.0":
   version: 6.11.2
   resolution: "qs@npm:6.11.2"
   dependencies:
@@ -12493,6 +12500,7 @@ __metadata:
     react-icons: "npm:^4.8.0"
     react-router-dom: "npm:^6.8.1"
     storybook: "npm:7.4.5"
+    stripe: "npm:^13.8.0"
     swr: "npm:^2.2.4"
     tailwindcss: "npm:^3.2.7"
     typescript: "npm:^4.9.3"
@@ -13791,6 +13799,16 @@ __metadata:
   version: 3.1.1
   resolution: "strip-json-comments@npm:3.1.1"
   checksum: 20cff3f15267a8b603c4dcec9c3cc5217bcf3f1a66481a4f9ecf262eacc1733a0457756288472328d24efef7705f7755e9511f9c383742389add93d4a9207ae5
+  languageName: node
+  linkType: hard
+
+"stripe@npm:^13.8.0":
+  version: 13.8.0
+  resolution: "stripe@npm:13.8.0"
+  dependencies:
+    "@types/node": "npm:>=8.1.0"
+    qs: "npm:^6.11.0"
+  checksum: 060c111b3318ab63c60440e102dbf68976cfb6ee9a71e6f7eba880691424a620503593699454c99548af34b78f7ef3d6abda01f7b018d7df5609974b5b7fb785
   languageName: node
   linkType: hard
 

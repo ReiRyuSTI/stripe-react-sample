@@ -13,7 +13,7 @@ export const ApplicationPage = () => {
   };
 
   return (
-    <main>
+    <main className="flex flex-row items-center justify-center gap-4">
       <UserFormComponent user={{ uuid: userId, email: userEmail, name: '' }} submitData={submitData} />
     </main>
   );

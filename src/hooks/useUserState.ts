@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import useSWR from 'swr';
 
-import { updateDefaultPaymentMethod, userCreate, userRead } from '@/api/user';
+import { updateDefaultPaymentMethod, updateUserShipping, userCreate, userRead } from '@/api/user';
 
 export const useUserState = (uuid: string) => {
   const { data: response, isLoading: isLoadingUser, mutate: mutateUser } = useSWR(`user/${uuid}`, () => userRead(uuid));
@@ -16,5 +16,5 @@ export const useUserState = (uuid: string) => {
 };
 
 export const uesUserFunction = () => {
-  return { userCreate, updateDefaultPaymentMethod };
+  return { userCreate, updateDefaultPaymentMethod, updateUserShipping };
 };

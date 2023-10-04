@@ -1,19 +1,16 @@
 import useSWR from 'swr';
 import useSWRImmutable from 'swr/immutable';
 
-import { fetchCustomerPortal, fetchStripePubKey, paymentSetupIntent } from '@/api/paymentMethod';
+import { fetchStripePubKey, paymentSetupIntent } from '@/api/paymentMethod';
 
-export const usePaymentMethod = (uuid: string) => {
+export const useStripePubKey = () => {
   const { data: stripePubKey, isLoading: isLoadingStripePubKey } = useSWRImmutable('stripePubKey', fetchStripePubKey);
+  return { stripePubKey, isLoadingStripePubKey };
+};
+
+export const usePaymentMethodSetupIntent = (uuid: string) => {
   const { data: setupIntent, isLoading: isLoadingSetupIntent } = useSWR(`setupIntent/${uuid}`, () =>
     paymentSetupIntent(uuid)
   );
-  return { setupIntent, isLoadingSetupIntent, stripePubKey, isLoadingStripePubKey };
-};
-
-export const usePaymentMethodUseCustomerPortal = (uuid: string) => {
-  const { data: customerPortalUrl, isLoading: isLoadingCustomerPortalUrl } = useSWR('customerPortal', () =>
-    fetchCustomerPortal(uuid)
-  );
-  return { customerPortalUrl, isLoadingCustomerPortalUrl };
+  return { setupIntent, isLoadingSetupIntent };
 };

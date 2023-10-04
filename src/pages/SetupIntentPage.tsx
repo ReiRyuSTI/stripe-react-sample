@@ -3,12 +3,13 @@ import { loadStripe } from '@stripe/stripe-js';
 
 import { PaymentComponent } from '@/components/modules/PaymentComponent/PaymentComponent';
 import { useAzureAuth } from '@/hooks/useAzureAuth';
-import { usePaymentMethod } from '@/hooks/usePaymentMethod';
+import { usePaymentMethodSetupIntent, useStripePubKey } from '@/hooks/usePaymentMethod';
 import { LoadingComponent } from '@/pages/LoadingPage';
 
 export const SetupIntentPage = () => {
   const { userId } = useAzureAuth();
-  const { setupIntent, isLoadingSetupIntent, stripePubKey, isLoadingStripePubKey } = usePaymentMethod(userId);
+  const { stripePubKey, isLoadingStripePubKey } = useStripePubKey();
+  const { setupIntent, isLoadingSetupIntent } = usePaymentMethodSetupIntent(userId);
 
   if (isLoadingSetupIntent || !setupIntent) return <LoadingComponent />;
   if (isLoadingStripePubKey || !stripePubKey) return <LoadingComponent />;
@@ -17,9 +18,11 @@ export const SetupIntentPage = () => {
 
   return (
     <>
-      <Elements stripe={stripePromise} options={{ clientSecret: setupIntent }}>
-        <PaymentComponent />
-      </Elements>
+      <main className="flex flex-row items-center justify-center gap-4">
+        <Elements stripe={stripePromise} options={{ clientSecret: setupIntent }}>
+          <PaymentComponent />
+        </Elements>
+      </main>
     </>
   );
 };

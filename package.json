@@ -26,6 +26,7 @@
     "react-icon": "^1.0.0",
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.8.1",
+    "stripe": "^13.8.0",
     "swr": "^2.2.4"
   },
   "devDependencies": {
