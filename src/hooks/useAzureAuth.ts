@@ -7,7 +7,7 @@ import { AzureScopes } from '@/constants/authAzure';
 export const useAzureAuth = () => {
   const { instance, accounts } = useMsal();
   const isAuthenticated = useIsAuthenticated();
-  const account = useAccount(accounts[0]) || undefined;
+  const account = useAccount(accounts[0]) ?? undefined;
 
   const logoutAzure = useCallback(async () => {
     instance.logout();

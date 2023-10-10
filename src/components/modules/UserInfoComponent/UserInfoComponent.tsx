@@ -1,10 +1,10 @@
 import { AddressComponent } from '@/components/common/AddressComponent/AddressComponent';
 import { CardComponent } from '@/components/common/CardComponent/CardComponent';
 import { InfoContentComponent } from '@/components/common/InfoContentComponent/InfoContentComponent';
-import { user } from '@/types/user.type';
+import { UserType } from '@/types/user.type';
 
 type UserInfoComponentProps = {
-  user: user;
+  user: UserType;
 };
 
 export const UserInfoComponent = (props: UserInfoComponentProps) => {

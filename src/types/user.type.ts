@@ -1,6 +1,6 @@
 import Stripe from 'stripe';
 
-export type user = {
+export type UserType = {
   name: string;
   email: string;
   card?: Stripe.PaymentMethod.Card;
